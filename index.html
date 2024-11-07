@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wood &amp; Wood Zimmerei</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Startseite</a>
+        <a href="Kontakt.html">Kontakt</a>
+        <a href="FAQ.html">FAQ</a>
+    </nav>
+    <h1 class="orange-text">Wood &amp; Wood Zimmerei</h1>
+</header>
+
+<div class="container">
+    <section>
+        <h2>Willkommen bei Wood & Wood</h2>
+        <p>Maßgeschneiderte Lösungen im Bereich Zimmerei und Dachbau.</p>
+    </section>
+</div>
+<div class="container">
+    <section id="was-wir-bieten">
+        <h2>Was wir bieten</h2>
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="rsc/Bild1.jpg" alt="Aufschlagen von Dächern und montieren von Holzhäusern">
+                <div class="slide-text"><p>Aufschlagen von Dächern und montieren von Holzhäusern</p></div>
+            </div>
+            <div class="slide">
+                <img src="rsc/Bild2.jpg" alt="Dachsanierung">
+                <div class="slide-text"><p>Dachsanierung</p></div>
+            </div>
+            <div class="slide">
+                <img src="rsc/Bild3.jpg" alt="Carports und Vordächer">
+                <div class="slide-text"><p>Carports und Vordächer</p></div>
+            </div>
+            <div class="slide">
+                <img src="rsc/Bild4.jpg" alt="Arbeitsvorbereitung mit CAD-Cadwork">
+                <div class="slide-text"><p>Arbeitsvorbereitung mit CAD-Cadwork</p></div>
+            </div>
+            <button id="contact-button">Kontakt aufnehmen</button>
+        </div>
+        
+
+    </section>
+</div>
+<footer>
+    <p>&copy; 2024 Wood &amp; Wood Zimmerei</p>
+    <p>Christoph Wacker - Hauptstr. 2, 76779 Scheibenhardt</p>
+</footer>
+
+</body>
+</html>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('show');
+            if (i === index) slide.classList.add('show');
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Erste Slide anzeigen und alle 3 Sekunden wechseln
+    showSlide(currentSlide);
+    setInterval(nextSlide, 3000);
+
+    document.getElementById("contact-button").addEventListener("click", function() {
+    window.location.href = "Kontakt.html"; // Link zur Kontaktseite
+});
+
+</script>

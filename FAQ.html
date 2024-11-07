@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Wood &amp; Wood Zimmerei</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Startseite</a>
+        <a href="Kontakt.html">Kontakt</a>
+        <a href="FAQ.html">FAQ</a>
+    </nav>
+    <h1 class="orange-text">Wood &amp; Wood Zimmerei</h1>
+</header>
+
+<div class="container">
+    <section>
+        <h2>FAQ</h2>
+        <div class="faq-item">
+            <button class="faq-question">Was kostet eine Dachsanierung?</button>
+            <div class="faq-answer">
+                <p>Die Kosten für eine Dachsanierung hängen von mehreren Faktoren ab, darunter die Dachgröße, Materialien und Arbeitsaufwand. Gerne erstellen wir Ihnen ein individuelles Angebot.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question">Bieten Sie auch Carports und Vordächer an?</button>
+            <div class="faq-answer">
+                <p>Ja, wir bieten maßgeschneiderte Carports und Vordächer an, die perfekt zu Ihrem Gebäude passen.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question">Wie lange dauert die Montage eines Holzhauses?</button>
+            <div class="faq-answer">
+                <p>Die Dauer der Montage hängt von der Größe und Komplexität des Hauses ab. Wir beraten Sie gerne individuell zu Ihrem Projekt.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 Wood &amp; Wood Zimmerei</p>
+    <p>Christoph Wacker - Hauptstr. 2, 76779 Scheibenhardt</p>
+</footer>
+
+<script>
+    // JavaScript zur Steuerung des Ein- und Ausklappens
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            item.querySelector('.faq-answer').classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+</html>
