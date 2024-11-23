@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wood &amp; Wood Zimmerei</title>
+    <title>Wood &amp; Wood GmbH</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,15 +12,25 @@
     <nav>
         <a href="index.html">Startseite</a>
         <a href="Kontakt.html">Kontakt</a>
+        <a href="Referenzen.html">Referenzen</a>
         <a href="FAQ.html">FAQ</a>
     </nav>
-    <h1 class="orange-text">Wood &amp; Wood Zimmerei</h1>
+    <h1 class="orange-text">Wood &amp; Wood GmbH</h1>
 </header>
 
 <div class="container">
     <section>
-        <h1>Willkommen bei Wood & Wood</h1>
-        <p>Mit vielen Jahren Erfahrung und höchstem Anspruch an Qualität bieten wir maßgeschneiderte Lösungen in Zimmerei und Dachbau. Für unsere Holzhäuser verwenden wir bestes Fichtenholz – ein nachhaltiger Baustoff, der hervorragende Dämmwerte und eine warme Atmosphäre bietet. Wir lieben unser Handwerk und setzen Ihre Wünsche mit Sorgfalt und Präzision um.</p>
+        <h1>Willkommen bei der Wood & Wood GmbH, die Zimmerei für den modernen Hausbau und Sanierung</h1>
+        <p> 
+            Mit langjähriger <b>Erfahrung</b> in der <b>Zimmerei</b> und im <b>Hausbau</b> sind wir Ihr verlässlicher Partner für hochwertige Bauprojekte. 
+            Egal ob <b>schlüsselfertiges</b> Bauen, präzise geplante <b>Carports</b> oder professionelle <b>Dachsanierungen</b> – wir bieten Ihnen alles 
+            aus einer Hand. <br><br>
+            Dank modernster Technologien, wie der CAD-Planung mit <b>Cadwork</b>, setzen wir Ihre Projekte präzise und effizient um. So garantieren wir höchste 
+            Qualität und individuelle Lösungen, die perfekt auf Ihre Wünsche abgestimmt sind. <br> <br>
+            Ob Ihr Traumhaus, ein langlebiger Carport oder die Sanierung Ihres Dachs – bei uns stehen Handwerkskunst, Zuverlässigkeit und Ihre Zufriedenheit 
+            im Mittelpunkt. <br><br>
+            <b><a style="text-decoration: none; color: orange;" href="./Kontakt.html">Kontaktieren Sie uns jetzt </a></b> und lassen Sie uns gemeinsam Ihre Bauvorhaben verwirklichen.
+        </p>
     </section>
 </div>
 <div class="container">
@@ -28,30 +38,36 @@
         <h2>Was wir bieten</h2>
         <div class="slideshow-container">
             <div class="slide">
-                <img src="rsc/Bild1.jpg" alt="Aufschlagen von Dächern und montieren von Holzhäusern">
-                <div class="slide-text"><p>Aufschlagen von Dächern und montieren von Holzhäusern</p></div>
+                <a href="Referenzen.html#haus"><img src="rsc/Bild1.jpg" alt="Haus"></a>
+                <div class="slide-text"><p>Häuser</p></div>
             </div>
             <div class="slide">
-                <img src="rsc/Bild2.jpg" alt="Dachsanierung">
-                <div class="slide-text"><p>Dachsanierung</p></div>
+                <a href="Referenzen.html#dach"><img src="rsc/Bild5.jpg" alt="Dach"></a>
+                <div class="slide-text"><p>Dächer</p></div>
             </div>
             <div class="slide">
-                <img src="rsc/Bild3.jpg" alt="Carports und Vordächer">
-                <div class="slide-text"><p>Carports und Vordächer</p></div>
+                <a href="Referenzen.html#dachsanierung"><img src="rsc/Bild2.jpg" alt="Dachsanierung"></a>
+                <div class="slide-text"><p>Dachsanierungen</p></div>
             </div>
             <div class="slide">
-                <img src="rsc/Bild4.jpg" alt="Arbeitsvorbereitung mit CAD-Cadwork">
-                <div class="slide-text"><p>Arbeitsvorbereitung mit CAD-Cadwork</p></div>
+                <a href="Referenzen.html#carport"><img src="rsc/Bild3.jpg" alt="Carport"></a>
+                <div class="slide-text"><p>Carports</p></div>
             </div>
-            <button id="contact-button">Kontakt aufnehmen</button>
+            <div class="slide">
+                <a href="Referenzen.html#cadwork"><img src="rsc/Bild4.jpg" alt="CAD"></a>
+                <div class="slide-text"><p>CAD-Cadwork</p></div>
+            </div>
+            
         </div>
-        
-
     </section>
 </div>
 <footer>
-    <p>&copy; 2024 Wood &amp; Wood Zimmerei</p>
+    <p>&copy; 2024 Wood &amp; Wood GmbH</p>
     <p>Christoph Wacker - Hauptstr. 2, 76779 Scheibenhardt</p>
+    <a style="color: white;" href="Datenschutz.html">Datenschutzerklärung</a>
+    - 
+    <a style="color: white;" href="AGBs.html">AGBs</a>
+
 </footer>
 
 </body>
@@ -61,24 +77,24 @@
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
 
+    // Funktion: Zeigt die aktuelle Slide mit Fade-Effekt an
     function showSlide(index) {
         slides.forEach((slide, i) => {
-            slide.classList.remove('show');
-            if (i === index) slide.classList.add('show');
+            slide.classList.remove('show'); // Entfernt die aktive Klasse
+            if (i === index) {
+                slide.classList.add('show'); // Setzt die aktive Klasse
+            }
         });
     }
 
+    // Funktion: Nächste Slide auswählen
     function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
     }
 
-    // Erste Slide anzeigen und alle 3 Sekunden wechseln
+    // Startet den automatischen Wechsel der Slides
     showSlide(currentSlide);
     setInterval(nextSlide, 3000);
-
-    document.getElementById("contact-button").addEventListener("click", function() {
-    window.location.href = "Kontakt.html"; // Link zur Kontaktseite
-});
 
 </script>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referenzen - Wood &amp; Wood Zimmerei</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Allgemeine Container-Stile */
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        /* Bilder: gesamte Breite */
+        .container img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .container img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Overlay für Bildvergrößerung */
+        #image-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8); /* Abdunkelung des Hintergrunds */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* Vergrößertes Bild */
+        #overlay-image {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid white;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Schließen-Button */
+        #close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        #close-button:hover {
+            background: orange;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Startseite</a>
+        <a href="Kontakt.html">Kontakt</a>
+        <a href="Referenzen.html">Referenzen</a>
+        <a href="FAQ.html">FAQ</a>
+    </nav>
+    <h1 class="orange-text">Wood &amp; Wood GmbH</h1>
+</header>
+
+<div class="container">
+    <section id="haus">
+        <h2>Häuser</h2>
+        <img src="rsc/Bild1.jpg" alt="Holzhausbau">
+        <p>Hier sehen Sie ein Beispiel für unsere Arbeit im Bereich moderner Holzhausbau.</p>
+    </section>
+
+    <section id="dach">
+        <h2>Dächer</h2>
+        <img src="rsc/Bild5.jpg" alt="Dachkonstruktion">
+        <p>Ein Dach, das perfekt für Sie geplant und gebaut wurde.</p>
+    </section>
+
+    <section id="dachsanierung">
+        <h2>Dachsanierungen</h2>
+        <img src="rsc/Bild2.jpg" alt="Dachsanierung">
+        <p>Unsere Dachsanierungen kombinieren Tradition und modernste Technik für ein langlebiges Ergebnis.</p>
+    </section>
+
+    <section id="carport">
+        <h2>Carports und Vordächer</h2>
+        <img src="rsc/Bild3.jpg" alt="Carports und Vordächer">
+        <p>Ein maßgefertigter Carport, der nicht nur praktisch, sondern auch ästhetisch ist.</p>
+    </section>
+
+    <section id="cadwork">
+        <h2>Arbeitsvorbereitung mit CAD-Cadwork</h2>
+        <img src="rsc/Bild4.jpg" alt="CAD-Arbeitsvorbereitung">
+        <p>Unsere CAD-Planung ermöglicht eine präzise und effiziente Umsetzung Ihrer Projekte.</p>
+    </section>
+</div>
+
+<!-- Bild-Overlay -->
+<div id="image-overlay">
+    <button id="close-button">x</button>
+    <img id="overlay-image" src="" alt="Vergrößertes Bild">
+</div>
+
+<footer>
+    <p>&copy; 2024 Wood &amp; Wood GmbH</p>
+    <p>Christoph Wacker - Hauptstr. 2, 76779 Scheibenhardt</p>
+    <a style="color: white;" href="Datenschutz.html">Datenschutzerklärung</a>
+    - 
+    <a style="color: white;" href="AGBs.html">AGBs</a>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const images = document.querySelectorAll('.container img');
+        const overlay = document.getElementById('image-overlay');
+        const overlayImage = document.getElementById('overlay-image');
+        const closeButton = document.getElementById('close-button');
+
+        // Bild anklicken: Zeigt Overlay mit vergrößertem Bild
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                overlay.style.display = 'flex'; // Overlay sichtbar machen
+                overlayImage.src = image.src;  // Bildquelle übernehmen
+            });
+        });
+
+        // Schließen-Button oder Overlay klicken: Schließt das Overlay
+        closeButton.addEventListener('click', () => {
+            overlay.style.display = 'none';
+        });
+
+        overlay.addEventListener('click', (event) => {
+            if (event.target === overlay) {
+                overlay.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

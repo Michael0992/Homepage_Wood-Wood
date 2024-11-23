@@ -1,0 +1,22 @@
+1.Bilderstrecke bearbeiten :
+    
+     -Häuser
+     -Dächer
+    entfernen: Aufschlagen von ...
+    Bilder Aktualisieren
+
+2.Neue Kategorie:
+    Referenzen
+    Enthält Bilder
+
+3. Überprüfen SMTP
+
+4.FAQ Aktualisieren
+
+5.SuperText Aktualisieren ref.: Siehe Email
+
+6.PHP Script wegen SMPT mail.php adressat.
+
+7. SSH port anpassen.
+
+8. 
